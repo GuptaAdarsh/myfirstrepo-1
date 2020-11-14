@@ -9,7 +9,7 @@ s = smtplib.SMTP('smtp.gmail.com', 587)
   
 s.starttls() 
   
-# Authentication 
+# # Authentication 
 s.login(email,password) 
   
 def sendmail(reciever,message):
@@ -23,14 +23,14 @@ def index():
     sendmail(data['email'],data['message'])
     return jsonify("Hi")
 
-app.run(debug=True)
+app.run(host='0.0.0.0',port=8080)
 # creates SMTP session 
 
 # message to be sent 
 
   
 # terminating the session 
-s.quit() 
+# s.quit() 
 
 
 # print(email,password)
